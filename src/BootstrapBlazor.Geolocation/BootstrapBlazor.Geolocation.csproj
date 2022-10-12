@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+    <PropertyGroup>
+        <TargetFrameworks>net6.0</TargetFrameworks>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Version>6.2.0</Version>
+        <PackageProjectUrl>https://github.com/densen2014/BootstrapBlazor.Geolocation</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/densen2014/BootstrapBlazor.Geolocation</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageTags>Bootstrap Blazor Geolocation 定位/持续定位 组件</PackageTags>
+        <Description>Bootstrap UI Geolocation components experience</Description>
+        <AssemblyName>BootstrapBlazor.Geolocation</AssemblyName>
+        <RootNamespace>BootstrapBlazor.Geolocation</RootNamespace>
+        <AssemblyOriginatorKeyFile>..\keys\Longbow.Utility.snk</AssemblyOriginatorKeyFile>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.0" />
+    </ItemGroup>
+</Project>
