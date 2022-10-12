@@ -4,100 +4,6 @@
         <name>BootstrapBlazor.Geolocation</name>
     </assembly>
     <members>
-        <member name="T:BootstrapBlazor.Components.Geolocation">
-            <summary>
-            Geolocation 组件基类
-            <para></para>
-            扩展阅读:Chrome中模拟定位信息，清除定位信息<para></para>
-            https://blog.csdn.net/u010844189/article/details/81163438
-            </summary>
-        </member>
-        <member name="P:BootstrapBlazor.Components.Geolocation.GeolocationInfo">
-            <summary>
-            获得/设置 定位
-            </summary>
-        </member>
-        <member name="P:BootstrapBlazor.Components.Geolocation.GetLocationButtonText">
-            <summary>
-            获得/设置 获取位置按钮文字 默认为 获取位置
-            </summary>
-        </member>
-        <member name="P:BootstrapBlazor.Components.Geolocation.WatchID">
-            <summary>
-            获得/设置 获取持续定位监听器ID
-            </summary>
-        </member>
-        <member name="P:BootstrapBlazor.Components.Geolocation.WatchPositionButtonText">
-            <summary>
-            获得/设置 获取移动距离追踪按钮文字 默认为 移动距离追踪
-            </summary>
-        </member>
-        <member name="P:BootstrapBlazor.Components.Geolocation.ClearWatchPositionButtonText">
-            <summary>
-            获得/设置 获取停止追踪按钮文字 默认为 停止追踪
-            </summary>
-        </member>
-        <member name="P:BootstrapBlazor.Components.Geolocation.ShowButtons">
-            <summary>
-            获得/设置 是否显示默认按钮界面
-            </summary>
-        </member>
-        <member name="P:BootstrapBlazor.Components.Geolocation.GeolocationElement">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:BootstrapBlazor.Components.Geolocation.OnResult">
-            <summary>
-            获得/设置 定位结果回调方法
-            </summary>
-        </member>
-        <member name="P:BootstrapBlazor.Components.Geolocation.OnUpdateStatus">
-            <summary>
-            获得/设置 状态更新回调方法
-            </summary>
-        </member>
-        <member name="M:BootstrapBlazor.Components.Geolocation.GetLocation">
-            <summary>
-            获取定位
-            </summary>
-        </member>
-        <member name="M:BootstrapBlazor.Components.Geolocation.WatchPosition">
-            <summary>
-            持续定位
-            </summary>
-        </member>
-        <member name="M:BootstrapBlazor.Components.Geolocation.ClearWatch">
-            <summary>
-            持续定位
-            </summary>
-        </member>
-        <member name="M:BootstrapBlazor.Components.Geolocation.GetResult(BootstrapBlazor.Components.Geolocationitem)">
-            <summary>
-            定位完成回调方法
-            </summary>
-            <param name="geolocations"></param>
-            <returns></returns>
-        </member>
-        <member name="P:BootstrapBlazor.Components.Geolocation.OnError">
-            <summary>
-            获得/设置 错误回调方法
-            </summary>
-        </member>
-        <member name="M:BootstrapBlazor.Components.Geolocation.UpdateStatus(System.String)">
-            <summary>
-            状态更新回调方法
-            </summary>
-            <param name="status"></param>
-            <returns></returns>
-        </member>
-        <member name="M:BootstrapBlazor.Components.Geolocation.UpdateWatchID(System.Int64)">
-            <summary>
-            监听器ID回调方法
-            </summary>
-            <param name="watchID"></param>
-            <returns></returns>
-        </member>
         <member name="T:BootstrapBlazor.Components.Geolocationitem">
             <summary>
             定位数据类
@@ -162,6 +68,100 @@
             
             </summary>
             <param name="unixTimeStamp"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BootstrapBlazor.Components.Geolocations">
+            <summary>
+            Geolocation 组件基类
+            <para></para>
+            扩展阅读:Chrome中模拟定位信息，清除定位信息<para></para>
+            https://blog.csdn.net/u010844189/article/details/81163438
+            </summary>
+        </member>
+        <member name="P:BootstrapBlazor.Components.Geolocations.GeolocationInfo">
+            <summary>
+            获得/设置 定位
+            </summary>
+        </member>
+        <member name="P:BootstrapBlazor.Components.Geolocations.GetLocationButtonText">
+            <summary>
+            获得/设置 获取位置按钮文字 默认为 获取位置
+            </summary>
+        </member>
+        <member name="P:BootstrapBlazor.Components.Geolocations.WatchID">
+            <summary>
+            获得/设置 获取持续定位监听器ID
+            </summary>
+        </member>
+        <member name="P:BootstrapBlazor.Components.Geolocations.WatchPositionButtonText">
+            <summary>
+            获得/设置 获取移动距离追踪按钮文字 默认为 移动距离追踪
+            </summary>
+        </member>
+        <member name="P:BootstrapBlazor.Components.Geolocations.ClearWatchPositionButtonText">
+            <summary>
+            获得/设置 获取停止追踪按钮文字 默认为 停止追踪
+            </summary>
+        </member>
+        <member name="P:BootstrapBlazor.Components.Geolocations.ShowButtons">
+            <summary>
+            获得/设置 是否显示默认按钮界面
+            </summary>
+        </member>
+        <member name="P:BootstrapBlazor.Components.Geolocations.GeolocationElement">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BootstrapBlazor.Components.Geolocations.OnResult">
+            <summary>
+            获得/设置 定位结果回调方法
+            </summary>
+        </member>
+        <member name="P:BootstrapBlazor.Components.Geolocations.OnUpdateStatus">
+            <summary>
+            获得/设置 状态更新回调方法
+            </summary>
+        </member>
+        <member name="M:BootstrapBlazor.Components.Geolocations.GetLocation">
+            <summary>
+            获取定位
+            </summary>
+        </member>
+        <member name="M:BootstrapBlazor.Components.Geolocations.WatchPosition">
+            <summary>
+            持续定位
+            </summary>
+        </member>
+        <member name="M:BootstrapBlazor.Components.Geolocations.ClearWatch">
+            <summary>
+            持续定位
+            </summary>
+        </member>
+        <member name="M:BootstrapBlazor.Components.Geolocations.GetResult(BootstrapBlazor.Components.Geolocationitem)">
+            <summary>
+            定位完成回调方法
+            </summary>
+            <param name="geolocations"></param>
+            <returns></returns>
+        </member>
+        <member name="P:BootstrapBlazor.Components.Geolocations.OnError">
+            <summary>
+            获得/设置 错误回调方法
+            </summary>
+        </member>
+        <member name="M:BootstrapBlazor.Components.Geolocations.UpdateStatus(System.String)">
+            <summary>
+            状态更新回调方法
+            </summary>
+            <param name="status"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BootstrapBlazor.Components.Geolocations.UpdateWatchID(System.Int64)">
+            <summary>
+            监听器ID回调方法
+            </summary>
+            <param name="watchID"></param>
             <returns></returns>
         </member>
     </members>

@@ -19,7 +19,7 @@ https://blazor.app1.es/geolocations
 
 3.razor页面
 ```
-<Geolocation OnResult="@OnResult" OnUpdateStatus="@OnUpdateStatus" />
+<Geolocations OnResult="@OnResult" OnUpdateStatus="@OnUpdateStatus" />
 
 <Badge Color="Color.Warning">@status</Badge>
 
