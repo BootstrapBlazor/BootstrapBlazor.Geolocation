@@ -86,7 +86,7 @@ public partial class Geolocations
         {
             if (firstRender)
             {
-                module = await JS!.InvokeAsync<IJSObjectReference>("import", "./_content/BootstrapBlazor.Geolocation/lib/geolocation/geolocation.js");
+                module = await JS!.InvokeAsync<IJSObjectReference>("import", "./_content/BootstrapBlazor.Geolocation/lib/geolocation/geolocation.js" + "?v=" + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version);
                 InstanceGeo = DotNetObjectReference.Create(this);
             }
         }
