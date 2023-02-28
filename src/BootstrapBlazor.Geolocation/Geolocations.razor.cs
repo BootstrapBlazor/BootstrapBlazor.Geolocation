@@ -16,9 +16,9 @@ namespace BootstrapBlazor.Components;
 /// 扩展阅读:Chrome中模拟定位信息，清除定位信息<para></para>
 /// https://blog.csdn.net/u010844189/article/details/81163438
 /// </summary>
-public partial class Geolocations
+public partial class Geolocations : IAsyncDisposable
 {
-    [Inject] IJSRuntime? JS { get; set; }
+    [Inject][NotNull] IJSRuntime? JS { get; set; }
 
     /// <summary>
     /// 获得/设置 定位
