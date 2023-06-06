@@ -12,6 +12,11 @@
         return this * Math.PI / 180;
     }
 
+    const options = {
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 0,
+    };
 
     function distance(latitude1, longitude1, latitude2, longitude2) {
         // R is the radius of the earth in kilometers
@@ -55,7 +60,7 @@
         if (navigator.geolocation) {
             updateStatus("HTML5 Geolocation is supported in your browser.");
             navigator.geolocation.getCurrentPosition(updateLocation,
-                handleLocationError);
+                handleLocationError, options);
         }
     }
 
