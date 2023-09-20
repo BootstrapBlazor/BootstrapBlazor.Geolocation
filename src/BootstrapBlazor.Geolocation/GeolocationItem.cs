@@ -94,3 +94,32 @@ public class Geolocationitem
     }
 
 }
+
+
+/// <summary>
+/// 定位参数
+/// </summary>
+public class GeolocationOptions
+{
+    /// <summary>
+    /// 是否启用高精度定位
+    /// </summary>
+    /// <returns></returns>
+    [DisplayName("是否启用高精度定位")]
+    public bool EnableHighAccuracy { get; set; } = true;
+    ///
+    /// <summary>
+    /// 超时时间
+    /// </summary>
+    /// <returns></returns>
+    [DisplayName("超时时间")]
+    public int Timeout { get; set; } = 5000;
+    ///
+    /// <summary>
+    /// 最大等待时间
+    /// </summary>
+    /// <returns></returns>
+    [DisplayName("最大等待时间")]
+    public int MaximumAge { get; set; } = 0;
+
+}

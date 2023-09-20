@@ -77,8 +77,14 @@ public partial class Geolocations : IAsyncDisposable
     [Parameter]
     public Func<string, Task>? OnUpdateStatus { get; set; }
 
+    /// <summary>
+    /// 获得/设置 状态更新回调方法
+    /// </summary>
+    [Parameter]
+    public GeolocationOptions Options { get; set; } = new();
+
     private IJSObjectReference? module;
-    private DotNetObjectReference<Geolocations>? InstanceGeo { get; set; }
+    private DotNetObjectReference<Geolocations>? Instance { get; set; }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
@@ -86,8 +92,8 @@ public partial class Geolocations : IAsyncDisposable
         {
             if (firstRender)
             {
-                module = await JS!.InvokeAsync<IJSObjectReference>("import", "./_content/BootstrapBlazor.Geolocation/lib/geolocation/geolocation.js" + "?v=" + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version);
-                InstanceGeo = DotNetObjectReference.Create(this);
+                module = await JS!.InvokeAsync<IJSObjectReference>("import", "./_content/BootstrapBlazor.Geolocation/Geolocations.razor.js" + "?v=" + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version);
+                Instance = DotNetObjectReference.Create(this);
             }
         }
         catch (Exception e)
@@ -101,7 +107,7 @@ public partial class Geolocations : IAsyncDisposable
         if (module is not null)
         {
             //await module.InvokeVoidAsync("destroy");
-            InstanceGeo!.Dispose();
+            Instance!.Dispose();
             await module.DisposeAsync();
         }
     }
@@ -114,7 +120,7 @@ public partial class Geolocations : IAsyncDisposable
     {
         try
         {
-            await module!.InvokeVoidAsync("getLocation", InstanceGeo);
+            await module!.InvokeVoidAsync("getLocation", Instance,true, Options);
         }
         catch (Exception e)
         {
@@ -129,7 +135,7 @@ public partial class Geolocations : IAsyncDisposable
     {
         try
         {
-            await module!.InvokeVoidAsync("getLocation", InstanceGeo, false);
+            await module!.InvokeVoidAsync("getLocation", Instance, false);
         }
         catch (Exception e)
         {
@@ -142,7 +148,7 @@ public partial class Geolocations : IAsyncDisposable
     /// </summary>
     public virtual async Task ClearWatch()
     {
-        await module!.InvokeVoidAsync("clearWatchLocation", InstanceGeo, WatchID);
+        await module!.InvokeVoidAsync("clearWatchLocation", Instance, WatchID);
         WatchID = null;
     }
 

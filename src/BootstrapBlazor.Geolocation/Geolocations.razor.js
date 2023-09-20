@@ -1,4 +1,4 @@
-﻿export function getLocation(wrapper, getPosition = true) {
+﻿export function getLocation(wrapper, getPosition = true, options = null) {
     console.log('start ' + (getPosition ? 'getLocation' : 'watchPosition'));
     var currentDistance = 0.0;
     var totalDistance = 0.0;
@@ -6,16 +6,21 @@
     var lastLong;
     var status;
 
-    if (getPosition) getCurrentPosition(); else watchPosition();
+    if (getPosition)
+        getCurrentPosition();
+    else
+        watchPosition();
 
     Number.prototype.toRadians = function () {
         return this * Math.PI / 180;
     }
 
-    const options = {
-        enableHighAccuracy: true,
-        timeout: 5000,
-        maximumAge: 0,
+    if (!options) {
+        options = {
+            enableHighAccuracy: true,
+            timeout: 5000,
+            maximumAge: 0,
+        }
     };
 
     function distance(latitude1, longitude1, latitude2, longitude2) {
@@ -50,8 +55,7 @@
             status = "HTML5 Geolocation is supported in your browser.";
             updateStatus(status);
             var id = navigator.geolocation.watchPosition(updateLocation,
-                handleLocationError,
-                { maximumAge: 20000 });
+                handleLocationError,{ maximumAge: 20000 });
             wrapper.invokeMethodAsync('UpdateWatchID', id);
         }
     }
@@ -122,7 +126,7 @@
     }
 
 }
-export function clearWatchLocation(wrapper,id) {
+export function clearWatchLocation(wrapper, id) {
     //扩展阅读:移除的监听器
     //id = navigator.geolocation.watchPosition(success, error, options);
     console.log('clearWatch ' + id);
