@@ -18,7 +18,7 @@ namespace BootstrapBlazor.Components;
 /// </summary>
 public partial class Geolocations : IAsyncDisposable
 {
-    [Inject][NotNull] IJSRuntime? JS { get; set; }
+    [Inject][NotNull] private IJSRuntime? JS { get; set; }
 
     /// <summary>
     /// 获得/设置 定位
@@ -120,7 +120,7 @@ public partial class Geolocations : IAsyncDisposable
     {
         try
         {
-            await module!.InvokeVoidAsync("getLocation", Instance,true, Options);
+            await module!.InvokeVoidAsync("getLocation", Instance, true, Options);
         }
         catch (Exception e)
         {
@@ -195,7 +195,7 @@ public partial class Geolocations : IAsyncDisposable
     [JSInvokable]
     public Task UpdateWatchID(long watchID)
     {
-        this.WatchID = watchID;
+        WatchID = watchID;
         return Task.CompletedTask;
     }
 
