@@ -6,7 +6,7 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Version>8.0.0</Version>
+        <Version>8.0.1</Version>
         <PackageProjectUrl>https://github.com/densen2014/BootstrapBlazor.Geolocation</PackageProjectUrl>
         <RepositoryUrl>https://github.com/densen2014/BootstrapBlazor.Geolocation</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
