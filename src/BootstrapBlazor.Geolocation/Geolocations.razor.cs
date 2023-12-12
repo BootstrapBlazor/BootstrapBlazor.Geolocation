@@ -18,7 +18,10 @@ namespace BootstrapBlazor.Components;
 /// </summary>
 public partial class Geolocations : IAsyncDisposable
 {
-    [Inject][NotNull] private IJSRuntime? JSRuntime { get; set; }
+    [Inject]
+    [NotNull]
+    private IJSRuntime? JSRuntime { get; set; }
+
 
     /// <summary>
     /// 获得/设置 定位
@@ -61,9 +64,9 @@ public partial class Geolocations : IAsyncDisposable
     public bool ShowButtons { get; set; } = true;
 
     /// <summary>
-    /// 
+    /// UI界面元素的引用对象
     /// </summary>
-    protected ElementReference GeolocationElement { get; set; }
+    protected ElementReference Element { get; set; }
 
     /// <summary>
     /// 获得/设置 定位结果回调方法
